@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
       body: Center(
         child: TextButton(
           onPressed: () {
-            Navigator.pushNamed(context, '/second');
+            Navigator.pushNamed(context, '/open');
           },
           child: Text('Go to Second Screen'),
         ),

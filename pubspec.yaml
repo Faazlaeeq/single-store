@@ -80,7 +80,7 @@ flutter:
     - family: Mont
       fonts:
         - asset: assets/fonts/Mont-ExtraLight.otf
-        - asset: fonts/Mont-Heavy.otf
+        - asset: assets/fonts/Mont-Heavy.otf
           weight: 700
   #   - family: Trajan Pro
   #     fonts:
