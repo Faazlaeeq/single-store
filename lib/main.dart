@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: myTheme(context),
+      themeMode: ThemeMode.light,
       onGenerateRoute: (settings) => RoutesManager().generateRoute(settings),
       initialRoute: RoutesManager.open,
     );
