@@ -32,15 +32,41 @@ ThemeData myTheme(BuildContext context) {
     ),
   );
   final textTheme = Theme.of(context).textTheme.copyWith(
-        titleSmall: Theme.of(context).textTheme.titleSmall!.copyWith(
+        displaySmall: Theme.of(context).textTheme.displaySmall!.copyWith(
+              fontWeight: FontWeight.w700,
+              fontSize: 30,
+              fontFamily: 'Mont',
+            ),
+        displayMedium: Theme.of(context).textTheme.displayMedium!.copyWith(
               fontWeight: FontWeight.w700,
               fontFamily: 'Mont',
+            ),
+        displayLarge: Theme.of(context).textTheme.displayLarge!.copyWith(
+              fontWeight: FontWeight.w700,
+              fontFamily: 'Mont',
+            ),
+        headlineLarge: Theme.of(context).textTheme.headlineLarge!.copyWith(
+              fontWeight: FontWeight.w400,
+              fontFamily: 'Mont',
+            ),
+        headlineMedium: Theme.of(context).textTheme.headlineMedium!.copyWith(
+              fontWeight: FontWeight.w400,
+              fontFamily: 'Mont',
+            ),
+        headlineSmall: Theme.of(context).textTheme.headlineSmall!.copyWith(
+              fontWeight: FontWeight.w400,
+              fontFamily: 'Mont',
+            ),
+        titleLarge: Theme.of(context).textTheme.titleLarge!.copyWith(
+              fontWeight: FontWeight.w700,
+              fontFamily: 'Mont',
+              fontSize: 20,
             ),
         titleMedium: Theme.of(context).textTheme.titleMedium!.copyWith(
               fontWeight: FontWeight.w700,
               fontFamily: 'Mont',
             ),
-        titleLarge: Theme.of(context).textTheme.titleLarge!.copyWith(
+        titleSmall: Theme.of(context).textTheme.titleSmall!.copyWith(
               fontWeight: FontWeight.w700,
               fontFamily: 'Mont',
             ),
@@ -68,35 +94,12 @@ ThemeData myTheme(BuildContext context) {
               fontFamily: 'Mont',
               color: MyColors.subtitleColor,
             ),
-        displaySmall: Theme.of(context).textTheme.displaySmall!.copyWith(
-              fontWeight: FontWeight.w700,
-              fontSize: 30,
-              fontFamily: 'Mont',
-            ),
-        displayMedium: Theme.of(context).textTheme.displayMedium!.copyWith(
-              fontWeight: FontWeight.w700,
-              fontFamily: 'Mont',
-            ),
-        displayLarge: Theme.of(context).textTheme.displayLarge!.copyWith(
-              fontWeight: FontWeight.w700,
-              fontFamily: 'Mont',
-            ),
-        headlineSmall: Theme.of(context).textTheme.headlineSmall!.copyWith(
-              fontWeight: FontWeight.w700,
-              fontFamily: 'Mont',
-            ),
-        headlineMedium: Theme.of(context).textTheme.headlineMedium!.copyWith(
-              fontWeight: FontWeight.w700,
-              fontFamily: 'Mont',
-            ),
-        headlineLarge: Theme.of(context).textTheme.headlineLarge!.copyWith(
-              fontWeight: FontWeight.w400,
-              fontFamily: 'Mont',
-            ),
       );
 
   return ThemeData.light(useMaterial3: true).copyWith(
     primaryColor: MyColors.primaryColor,
+    colorScheme: ColorScheme.fromSwatch().copyWith(
+        primary: MyColors.primaryColor, secondary: MyColors.secondaryColor),
     filledButtonTheme: filledButtonTheme,
     outlinedButtonTheme: outlineButtonTheme,
     textButtonTheme: textButtonTheme,

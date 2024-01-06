@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:single_store/routes/route_manager.dart';
 import 'package:single_store/theme/sizes.dart';
 
 class AuthSuccessfullScreen extends StatelessWidget {
@@ -17,8 +18,8 @@ class AuthSuccessfullScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset("assets/icons/successful-check.png"),
-                  SizedBox(
-                    height: height(context) / 50,
+                  const SizedBox(
+                    height: 36,
                   ),
                   Text(
                     "Sucessfull!",
@@ -26,7 +27,7 @@ class AuthSuccessfullScreen extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: padding * 3, vertical: padding),
+                        horizontal: padding3 * 3, vertical: padding3),
                     child: Text(
                       "You have successfully registered in our app and start working in it.!",
                       style: Theme.of(context).textTheme.labelLarge,
@@ -37,11 +38,14 @@ class AuthSuccessfullScreen extends StatelessWidget {
               ),
             ),
             Container(
-              margin: const EdgeInsets.all(padding),
+              margin: const EdgeInsets.all(padding3),
               width: double.maxFinite,
               height: 50,
               child: FilledButton(
-                  onPressed: () {}, child: const Text("Start Shopping")),
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(RoutesManager.home);
+                  },
+                  child: const Text("Start Shopping")),
             )
           ],
         ),

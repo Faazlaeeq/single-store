@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:single_store/screens/Auth/auth_successfull.dart';
 import 'package:single_store/screens/Auth/login_screen.dart';
 import 'package:single_store/screens/Auth/signup_screen.dart';
+import 'package:single_store/screens/Home/home_screen.dart';
 import 'package:single_store/screens/home_screen.dart';
 import 'package:single_store/screens/onboard_screen.dart';
 import 'package:single_store/screens/open_screen.dart';
@@ -19,7 +20,7 @@ class RoutesManager {
       case (home):
         return MaterialPageRoute(
           //TODO: change this to home screen
-          builder: (context) => AuthSuccessfullScreen(),
+          builder: (context) => HomeScreen(),
         );
       case (open):
         return MaterialPageRoute(
@@ -43,7 +44,7 @@ class RoutesManager {
         );
 
       default:
-        return MaterialPageRoute(builder: (context) => HomeScreen());
+        return MaterialPageRoute(builder: (context) => MainScreen());
     }
   }
 }

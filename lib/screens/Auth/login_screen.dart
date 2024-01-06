@@ -7,7 +7,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(padding),
+        padding: const EdgeInsets.all(padding3),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -20,16 +20,17 @@ class LoginScreen extends StatelessWidget {
                     'assets/images/logo-black.png',
                     fit: BoxFit.contain,
                   )),
-              SizedBox(height: height(context) / 9),
+              SizedBox(height: height(context) / 15),
               Text(
                 'Welcome!',
-                style: Theme.of(context).textTheme.headlineSmall,
+                style: Theme.of(context).textTheme.titleLarge,
                 textAlign: TextAlign.left,
               ),
               Text(
                 'please login or sign up to continue our app',
                 style: Theme.of(context).textTheme.labelLarge,
               ),
+              SizedBox(height: 66),
               Form(
                   child: Column(
                 children: [
@@ -38,27 +39,40 @@ class LoginScreen extends StatelessWidget {
                       labelText: 'Email',
                       hintText: 'Enter your email',
                       hintStyle: Theme.of(context).textTheme.labelSmall,
-                      labelStyle: Theme.of(context).textTheme.headlineSmall,
+                      labelStyle: Theme.of(context).textTheme.titleMedium,
                       floatingLabelBehavior: FloatingLabelBehavior.always,
-                      suffixIcon: const Icon(
-                        Icons.check_circle,
-                        color: MyColors.primaryColor,
-                      ),
+                      contentPadding: const EdgeInsets.symmetric(vertical: 0),
+                      border: const UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: MyColors.accentColorDark)),
+                      enabledBorder: const UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: MyColors.accentColorDark)),
+                      suffix: const Icon(Icons.check_circle,
+                          color: MyColors.primaryColor, size: 13),
                     ),
                   ),
+                  const SizedBox(height: 17),
                   TextFormField(
                     obscureText: true,
                     decoration: InputDecoration(
                       hintStyle: Theme.of(context).textTheme.labelSmall,
-                      labelStyle: Theme.of(context).textTheme.headlineSmall,
+                      labelStyle: Theme.of(context).textTheme.titleMedium,
                       labelText: 'Password',
                       hintText: 'Enter your password',
+                      contentPadding: const EdgeInsets.symmetric(vertical: 0),
+                      border: const UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: MyColors.accentColorDark)),
                       floatingLabelBehavior: FloatingLabelBehavior.always,
-                      suffixIcon: const Icon(Icons.check_circle,
-                          color: MyColors.primaryColor),
+                      enabledBorder: const UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: MyColors.accentColorDark)),
+                      suffix: const Icon(Icons.check_circle,
+                          color: MyColors.primaryColor, size: 13),
                     ),
                   ),
-                  SizedBox(height: height(context) / 20),
+                  const SizedBox(height: 17),
                   SizedBox(
                     width: double.maxFinite,
                     height: 50,
@@ -74,21 +88,27 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(padding / 2),
+                    padding: const EdgeInsets.all(padding2),
                     child: Row(children: <Widget>[
-                      const Expanded(child: Divider()),
+                      const Expanded(
+                          child: Divider(
+                        color: MyColors.accentColorDark,
+                      )),
                       Text(
-                        'Or',
+                        ' Or ',
                         style: Theme.of(context).textTheme.labelLarge,
                       ),
-                      const Expanded(child: Divider()),
+                      const Expanded(
+                          child: Divider(
+                        color: MyColors.accentColorDark,
+                      )),
                     ]),
                   ),
                   Text(
-                    'Do you have an Account?\n',
+                    'Don\'t have an Account?',
                     style: Theme.of(context).textTheme.labelLarge,
                   ),
-
+                  const SizedBox(height: 10),
                   SizedBox(
                     width: double.maxFinite,
                     height: 50,

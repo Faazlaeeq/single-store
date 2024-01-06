@@ -14,4 +14,7 @@ class MyColors {
   static const Color subtitleColor = Color.fromRGBO(102, 102, 102, 1);
   static final MaterialStateProperty<Color> mSubtitleColor =
       MaterialStateProperty.all(const Color.fromRGBO(102, 102, 102, 1));
+  static const Color grayColor = Color.fromRGBO(102, 102, 102, 1);
+
+  static const Color forgroundWhiteColor = Color.fromRGBO(243, 244, 245, 1);
 }

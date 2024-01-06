@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:single_store/routes/route_manager.dart';
 import 'package:single_store/theme/my_colors.dart';
 import 'package:single_store/theme/sizes.dart';
+import 'package:single_store/widgets/border_test_widget.dart';
 
 class SignUpScreen extends StatefulWidget {
   SignUpScreen({Key? key}) : super(key: key);
 
   bool checkValue = true;
+  bool hidepassword = true;
+  bool hiderepassword = true;
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();
 }
@@ -15,7 +19,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(padding),
+        padding: const EdgeInsets.all(padding3),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -31,7 +35,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               SizedBox(height: height(context) / 9),
               Text(
                 'Sign Up',
-                style: Theme.of(context).textTheme.headlineSmall,
+                style: Theme.of(context).textTheme.titleLarge,
                 textAlign: TextAlign.left,
               ),
               Text(
@@ -41,70 +45,134 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Form(
                   child: Column(
                 children: [
+                  const SizedBox(height: 17),
+
                   TextFormField(
-                    decoration: InputDecoration(
-                      labelText: 'User Name',
-                      hintText: 'Enter your name',
-                      hintStyle: Theme.of(context).textTheme.labelSmall,
-                      labelStyle: Theme.of(context).textTheme.headlineSmall,
-                      floatingLabelBehavior: FloatingLabelBehavior.always,
-                      suffixIcon: const Icon(
-                        Icons.check_circle,
-                        color: MyColors.primaryColor,
-                      ),
-                    ),
-                  ),
+                      decoration: InputDecoration(
+                    labelText: 'User Name',
+                    hintText: 'Enter your name',
+                    hintStyle: Theme.of(context).textTheme.labelSmall,
+                    labelStyle: Theme.of(context).textTheme.titleMedium,
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
+                    contentPadding: const EdgeInsets.symmetric(vertical: 0),
+                    border: const UnderlineInputBorder(
+                        borderSide:
+                            BorderSide(color: MyColors.accentColorDark)),
+                    enabledBorder: const UnderlineInputBorder(
+                        borderSide:
+                            BorderSide(color: MyColors.accentColorDark)),
+                    suffix: const Icon(Icons.check_circle,
+                        color: MyColors.primaryColor, size: 13),
+                  )),
+                  const SizedBox(height: 17),
+
                   TextFormField(
                     decoration: InputDecoration(
                       labelText: 'Email',
                       hintText: 'Enter your email',
                       hintStyle: Theme.of(context).textTheme.labelSmall,
-                      labelStyle: Theme.of(context).textTheme.headlineSmall,
+                      labelStyle: Theme.of(context).textTheme.titleMedium,
                       floatingLabelBehavior: FloatingLabelBehavior.always,
-                      suffixIcon: const Icon(
-                        Icons.check_circle,
-                        color: MyColors.primaryColor,
+                      contentPadding: const EdgeInsets.symmetric(vertical: 0),
+                      border: const UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: MyColors.accentColorDark)),
+                      enabledBorder: const UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: MyColors.accentColorDark)),
+                      suffix: const Icon(Icons.check_circle,
+                          color: MyColors.primaryColor, size: 13),
+                    ),
+                  ),
+                  const SizedBox(height: 17),
+
+                  TextFormField(
+                    obscureText: widget.hidepassword,
+                    decoration: InputDecoration(
+                      labelText: 'Password',
+                      hintText: 'Enter your password',
+                      hintStyle: Theme.of(context).textTheme.labelSmall,
+                      labelStyle: Theme.of(context).textTheme.titleMedium,
+                      floatingLabelBehavior: FloatingLabelBehavior.always,
+                      contentPadding: const EdgeInsets.symmetric(vertical: 0),
+                      border: const UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: MyColors.accentColorDark)),
+                      enabledBorder: const UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: MyColors.accentColorDark)),
+                      suffix: SizedBox(
+                        height: 30,
+                        width: 30,
+                        child: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                widget.hidepassword = !widget.hidepassword;
+                              });
+                            },
+                            icon: const ImageIcon(
+                                AssetImage("assets/icons/hide_password.png"),
+                                color: MyColors.primaryColor,
+                                size: 13)),
                       ),
                     ),
                   ),
+                  const SizedBox(height: 17),
+
                   TextFormField(
-                    obscureText: true,
+                    obscureText: widget.hiderepassword,
                     decoration: InputDecoration(
-                      hintStyle: Theme.of(context).textTheme.labelSmall,
-                      labelStyle: Theme.of(context).textTheme.headlineSmall,
-                      labelText: 'Password',
-                      hintText: 'Enter your password',
-                      floatingLabelBehavior: FloatingLabelBehavior.always,
-                      suffixIcon: const Icon(Icons.check_circle,
-                          color: MyColors.primaryColor),
-                    ),
-                  ),
-                  TextFormField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      hintStyle: Theme.of(context).textTheme.labelSmall,
-                      labelStyle: Theme.of(context).textTheme.headlineSmall,
                       labelText: 'Re-Password',
                       hintText: 'Enter your password again',
+                      hintStyle: Theme.of(context).textTheme.labelSmall,
+                      labelStyle: Theme.of(context).textTheme.titleMedium,
                       floatingLabelBehavior: FloatingLabelBehavior.always,
-                      suffixIcon: const Icon(Icons.check_circle,
-                          color: MyColors.primaryColor),
+                      contentPadding: const EdgeInsets.symmetric(vertical: 0),
+                      border: const UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: MyColors.accentColorDark)),
+                      enabledBorder: const UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: MyColors.accentColorDark)),
+                      suffix: SizedBox(
+                        height: 30,
+                        width: 30,
+                        child: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                widget.hiderepassword = !widget.hiderepassword;
+                              });
+                            },
+                            icon: const ImageIcon(
+                                AssetImage("assets/icons/hide_password.png"),
+                                color: MyColors.primaryColor,
+                                size: 13)),
+                      ),
                     ),
                   ),
-                  SizedBox(height: height(context) / 50),
+                  const SizedBox(height: 15),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Checkbox(
-                        value: widget.checkValue,
-                        // fillColor: MyColors.mPrimaryColor,
-                        activeColor: MyColors.primaryColor,
-                        checkColor: MyColors.secondaryColor,
-                        onChanged: (bool? value) {
-                          widget.checkValue = value!;
-                          setState(() {});
-                        },
+                      SizedBox(
+                        width: 20,
+                        height: 20,
+                        child: Checkbox(
+                          side:
+                              const BorderSide(color: MyColors.accentColorDark),
+                          visualDensity: VisualDensity.compact,
+                          value: widget.checkValue,
+
+                          // fillColor: MyColors.mPrimaryColor,
+                          activeColor: MyColors.primaryColor,
+                          checkColor: MyColors.secondaryColor,
+                          onChanged: (bool? value) {
+                            widget.checkValue = value!;
+                            setState(() {});
+                          },
+                        ),
                       ),
+                      const SizedBox(width: 10),
                       Expanded(
                         child: Text(
                           'By creating an account you have to agree with our term & conditions.',
@@ -118,7 +186,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     width: double.maxFinite,
                     height: 50,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context)
+                            .pushNamed(RoutesManager.authSuccessfull);
+                      },
                       child: Text('Sign Up',
                           style: Theme.of(context)
                               .textTheme

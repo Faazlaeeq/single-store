@@ -11,19 +11,19 @@ class OnBoardScreen extends StatefulWidget {
     {
       "title": "20% Discount \nNew Arrival Product",
       "description":
-          "Publish up your selfies to make yourself more beautiful with this app.",
+          "Publish up your selfies to make yourself \nmore beautiful with this app.",
       "image": "assets/images/boarding-img-1.png"
     },
     {
       "title": "Take Advantage Of The Offer Shopping ",
       "description":
-          "Publish up your selfies to make yourself more beautiful with this app.",
+          "Publish up your selfies to make yourself \nmore beautiful with this app.",
       "image": "assets/images/boarding-img-2.png"
     },
     {
       "title": "All Types Offers Within Your Reach",
       "description":
-          "Publish up your selfies to make yourself more beautiful with this app.",
+          "Publish up your selfies to make yourself \nmore beautiful with this app.",
       "image": "assets/images/boarding-img-3.png"
     },
   ];
@@ -47,7 +47,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
           children: [
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.all(padding),
+                padding: const EdgeInsets.all(padding3),
                 child: PageView.builder(
                     controller: _controller,
                     itemCount: 3,
@@ -59,25 +59,25 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
                     itemBuilder: (context, index) {
                       return Column(
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.all(padding / 4),
-                            child: Image(
-                              image: AssetImage(
-                                  widget.pageContent[index]["image"]!),
-                            ),
+                          Image(
+                            image:
+                                AssetImage(widget.pageContent[index]["image"]!),
                           ),
                           Container(
                             alignment: Alignment.centerLeft,
                             padding: const EdgeInsets.only(
-                                top: padding, bottom: padding),
+                                top: padding3, bottom: padding3),
                             child: Text(
                               widget.pageContent[index]["title"]!,
-                              style: Theme.of(context).textTheme.displaySmall,
+                              style: Theme.of(context).textTheme.headlineMedium,
                             ),
                           ),
-                          Text(
-                            widget.pageContent[index]["description"]!,
-                            style: Theme.of(context).textTheme.labelLarge,
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              widget.pageContent[index]["description"]!,
+                              style: Theme.of(context).textTheme.labelLarge,
+                            ),
                           ),
                         ],
                       );
@@ -89,7 +89,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
                 fit: FlexFit.tight,
                 child: SizedBox(
                   child: Padding(
-                    padding: const EdgeInsets.all(padding),
+                    padding: const EdgeInsets.all(padding3),
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -120,6 +120,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
                                 }
                               },
                               child: const ImageIcon(
+                                  size: 17,
                                   AssetImage("assets/icons/arrow-smooth.png")))
                         ]),
                   ),
