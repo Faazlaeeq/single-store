@@ -7,7 +7,7 @@ class MyColors {
   static const Color primaryColor = Colors.black;
   static final MaterialStateProperty<Color> mPrimaryColor =
       MaterialStateProperty.all(Colors.black);
-  static const Color accentColor = Color.fromRGBO(255, 255, 255, 0.5);
+  static const Color accentColor = Color.fromRGBO(255, 255, 255, 0.8);
 
   static const Color accentColorDark = Color.fromRGBO(0, 0, 0, 0.2);
 

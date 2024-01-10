@@ -3,6 +3,8 @@ import 'package:single_store/theme/my_colors.dart';
 import 'package:single_store/theme/sizes.dart';
 
 class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +32,7 @@ class LoginScreen extends StatelessWidget {
                 'please login or sign up to continue our app',
                 style: Theme.of(context).textTheme.labelLarge,
               ),
-              SizedBox(height: 66),
+              const SizedBox(height: 66),
               Form(
                   child: Column(
                 children: [

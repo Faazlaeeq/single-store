@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:single_store/screens/Auth/auth_successfull.dart';
 import 'package:single_store/screens/Auth/login_screen.dart';
 import 'package:single_store/screens/Auth/signup_screen.dart';
+import 'package:single_store/screens/Home/catrgory_screen.dart';
 import 'package:single_store/screens/Home/home_screen.dart';
 import 'package:single_store/screens/home_screen.dart';
 import 'package:single_store/screens/onboard_screen.dart';
@@ -14,6 +15,7 @@ class RoutesManager {
   static const String login = "/login";
   static const String signup = "/signup";
   static const String authSuccessfull = "/authSuccessfull";
+  static const String category = "/home/category";
 
   Route generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -41,6 +43,10 @@ class RoutesManager {
       case (authSuccessfull):
         return MaterialPageRoute(
           builder: (context) => AuthSuccessfullScreen(),
+        );
+      case (category):
+        return MaterialPageRoute(
+          builder: (context) => CatrgoryScreen(),
         );
 
       default:

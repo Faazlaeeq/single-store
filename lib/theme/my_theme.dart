@@ -99,7 +99,10 @@ ThemeData myTheme(BuildContext context) {
   return ThemeData.light(useMaterial3: true).copyWith(
     primaryColor: MyColors.primaryColor,
     colorScheme: ColorScheme.fromSwatch().copyWith(
-        primary: MyColors.primaryColor, secondary: MyColors.secondaryColor),
+      primary: MyColors.primaryColor,
+      secondary: MyColors.secondaryColor,
+      surfaceTint: MyColors.primaryColor,
+    ),
     filledButtonTheme: filledButtonTheme,
     outlinedButtonTheme: outlineButtonTheme,
     textButtonTheme: textButtonTheme,

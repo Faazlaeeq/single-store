@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:single_store/routes/route_manager.dart';
 import 'package:single_store/theme/my_colors.dart';
 import 'package:single_store/theme/sizes.dart';
-import 'package:single_store/widgets/border_test_widget.dart';
 
 class SignUpScreen extends StatefulWidget {
   SignUpScreen({Key? key}) : super(key: key);
