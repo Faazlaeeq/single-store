@@ -3,7 +3,7 @@ import 'package:single_store/theme/my_colors.dart';
 import 'package:single_store/theme/sizes.dart';
 
 class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
-  MyAppbar({
+  const MyAppbar({
     super.key,
     required this.scaffoldKey,
     this.leadingIcon = 'assets/icons/drawer-icon.png',
@@ -11,6 +11,7 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
     this.actionBgColor = MyColors.accentColorDark,
     this.padding = padding1,
     this.onpressed,
+    this.positionedWidget,
   });
 
   final GlobalKey<ScaffoldState> scaffoldKey;
@@ -18,8 +19,9 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
   final String actionIcon;
   final Color actionBgColor;
   final double padding;
+  final Widget? positionedWidget;
 
-  VoidCallback? onpressed;
+  final VoidCallback? onpressed;
 
   @override
   Widget build(BuildContext context) {
@@ -42,15 +44,20 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
                 },
       ),
       actions: [
-        IconButton(
-          onPressed: () {},
-          icon: CircleAvatar(
-              backgroundColor: actionBgColor,
-              child: Padding(
-                padding: EdgeInsets.all(padding),
-                child: Image.asset(actionIcon,
-                    alignment: Alignment.bottomCenter, fit: BoxFit.cover),
-              )),
+        Stack(
+          children: [
+            positionedWidget ?? const SizedBox(),
+            IconButton(
+              onPressed: () {},
+              icon: CircleAvatar(
+                  backgroundColor: actionBgColor,
+                  child: Padding(
+                    padding: EdgeInsets.all(padding),
+                    child: Image.asset(actionIcon,
+                        alignment: Alignment.bottomCenter, fit: BoxFit.cover),
+                  )),
+            ),
+          ],
         ),
         const SizedBox(
           width: padding5,

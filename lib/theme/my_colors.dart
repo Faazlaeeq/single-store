@@ -10,6 +10,7 @@ class MyColors {
   static const Color accentColor = Color.fromRGBO(255, 255, 255, 0.8);
 
   static const Color accentColorDark = Color.fromRGBO(0, 0, 0, 0.2);
+  static const Color dividerColor = Color.fromRGBO(238, 238, 238, 1);
 
   static const Color subtitleColor = Color.fromRGBO(102, 102, 102, 1);
   static final MaterialStateProperty<Color> mSubtitleColor =
@@ -17,4 +18,10 @@ class MyColors {
   static const Color grayColor = Color.fromRGBO(102, 102, 102, 1);
 
   static const Color forgroundWhiteColor = Color.fromRGBO(243, 244, 245, 1);
+
+  static const Color yellowColor = Color.fromRGBO(247, 159, 31, 1);
+  static const Color greenShade = Color.fromRGBO(202, 220, 167, 1);
+  static const Color outlineColorOnLight = Color.fromRGBO(204, 204, 204, 1);
+
+  static const Color ratingStarColor = Color.fromRGBO(255, 171, 7, 1);
 }

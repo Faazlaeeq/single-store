@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:single_store/routes/route_manager.dart';
 import 'package:single_store/theme/my_colors.dart';
 import 'package:single_store/theme/sizes.dart';
+import 'package:single_store/widgets/Home/new_arrival_card.dart';
 import 'package:single_store/widgets/my_appbar_widget.dart';
 import 'package:single_store/widgets/my_bottom_navigationbar.dart';
 
@@ -27,7 +28,20 @@ class HomeScreen extends StatelessWidget {
       "imgPath": "assets/images/banner-bg-img.png"
     }
   ];
-
+  final List<Map<String, String>> newArrival = [
+    {
+      "imgPath": "assets/images/arrivals-bag.png",
+      "brand": "The Marc Jacobs",
+      "name": "Traveler Tote",
+      "price": "195.00"
+    },
+    {
+      "imgPath": "assets/images/arrivals-shoe.png",
+      "brand": "Axel Arigato",
+      "name": "Clean 90 Triple Sneakers",
+      "price": "245.00"
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,7 +101,9 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, RoutesManager.filter);
+                    },
                     icon: Container(
                       height: 50,
                       width: 50,
@@ -281,73 +297,18 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                      Stack(children: [
-                        Container(
-                          height: 170,
-                          width: width(context) * 0.4,
-                          alignment: Alignment.bottomCenter,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              image: const DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage(
-                                      "assets/images/arrivals-bag.png"))),
-                        ),
-                        Positioned(
-                          top: 10,
-                          right: 10,
-                          child: IconButton(
-                            icon: Image.asset(
-                              "assets/icons/love.png",
-                              alignment: Alignment.bottomCenter,
-                              fit: BoxFit.cover,
-                              height: 20,
-                              width: 20,
-                            ),
-                            onPressed: () {},
-                          ),
-                        ),
-                      ]),
-                      Text(
-                        "The Marc Jacobs",
-                        style: Theme.of(context).textTheme.titleSmall,
-                      ),
-                      Text("Traveler Tote",
-                          style: Theme.of(context).textTheme.labelSmall),
-                      Text("\$195.00",
-                          style: Theme.of(context).textTheme.titleSmall!),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Stack(children: [
-                        Container(
-                          height: 170,
-                          width: width(context) * 0.4,
-                          alignment: Alignment.bottomCenter,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              image: const DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage(
-                                      "assets/images/arrivals-shoe.png"))),
-                        ),
-                        Positioned(
-                          top: 10,
-                          right: 10,
-                          child: IconButton(
-                            //Todo: change this to love icon
-                            icon: Image.asset(
-                              "assets/icons/love.png",
-                              alignment: Alignment.bottomCenter,
-                              fit: BoxFit.cover,
-                              height: 20,
-                              width: 20,
-                            ),
-                            onPressed: () {},
-                          ),
-                        ),
-                      ]),
+                      productCard(
+                          context,
+                          newArrival[0]["imgPath"]!,
+                          newArrival[0]["brand"]!,
+                          newArrival[0]["name"]!,
+                          newArrival[0]["price"]!),
+                      productCard(
+                          context,
+                          newArrival[1]["imgPath"]!,
+                          newArrival[1]["brand"]!,
+                          newArrival[1]["name"]!,
+                          newArrival[1]["price"]!),
                       Text(
                         "Axel Arigato",
                         style: Theme.of(context).textTheme.titleSmall,

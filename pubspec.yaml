@@ -39,6 +39,9 @@ dependencies:
   flutter_native_splash: ^2.3.9
   dots_indicator: ^3.0.0
   salomon_bottom_bar: ^3.3.2
+  faker: ^2.1.0
+  syncfusion_flutter_sliders: ^24.1.45
+  syncfusion_flutter_core: ^24.1.46
 
 
 dev_dependencies:
@@ -66,6 +69,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/images/products/
     - assets/icons/
     
 
