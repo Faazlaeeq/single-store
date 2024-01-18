@@ -5,9 +5,9 @@ import 'package:single_store/theme/my_colors.dart';
 import 'package:single_store/theme/sizes.dart';
 
 class OnBoardScreen extends StatefulWidget {
-  OnBoardScreen({super.key});
+  const OnBoardScreen({super.key});
 
-  List<Map<String, String>> pageContent = const [
+  final List<Map<String, String>> pageContent = const [
     {
       "title": "20% Discount \nNew Arrival Product",
       "description":

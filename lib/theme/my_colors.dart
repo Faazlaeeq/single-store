@@ -24,4 +24,6 @@ class MyColors {
   static const Color outlineColorOnLight = Color.fromRGBO(204, 204, 204, 1);
 
   static const Color ratingStarColor = Color.fromRGBO(255, 171, 7, 1);
+
+  static const Color shadowColor = Color.fromRGBO(0, 0, 0, 0.1);
 }

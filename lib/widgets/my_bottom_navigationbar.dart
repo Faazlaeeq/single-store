@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:single_store/routes/route_manager.dart';
 import 'package:single_store/theme/my_colors.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:single_store/theme/sizes.dart';
@@ -28,7 +29,12 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
         itemPadding:
             const EdgeInsets.symmetric(horizontal: 0, vertical: padding1),
         currentIndex: _currentIndex,
-        onTap: (i) => setState(() => _currentIndex = i),
+        onTap: (i) {
+          setState(() => _currentIndex = i);
+          if (i == 1) {
+            Navigator.pushNamed(context, RoutesManager.wishlist);
+          }
+        },
         items: [
           SalomonBottomBarItem(
             icon: SizedBox(
@@ -78,9 +84,10 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                   height: double.infinity,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      color: _currentIndex == 1
-                          ? MyColors.primaryColor
-                          : Colors.transparent),
+                      // color: _currentIndex == 1
+                      //     ? MyColors.primaryColor
+                      //     : Colors.transparent
+                      color: Colors.transparent),
                   child: Padding(
                     padding: const EdgeInsets.all(padding2),
                     child: Image.asset(
@@ -116,9 +123,10 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                   height: double.infinity,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      color: _currentIndex == 1
-                          ? MyColors.primaryColor
-                          : Colors.transparent),
+                      // color: _currentIndex == 1
+                      //     ? MyColors.primaryColor
+                      //     : Colors.transparent
+                      color: Colors.transparent),
                   child: Padding(
                     padding: const EdgeInsets.all(padding2),
                     child: Image.asset(
@@ -154,9 +162,10 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                   height: double.infinity,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      color: _currentIndex == 1
-                          ? MyColors.primaryColor
-                          : Colors.transparent),
+                      // color: _currentIndex == 1
+                      //     ? MyColors.primaryColor
+                      //     : Colors.transparent
+                      color: Colors.transparent),
                   child: Padding(
                     padding: const EdgeInsets.all(padding2),
                     child: Image.asset(

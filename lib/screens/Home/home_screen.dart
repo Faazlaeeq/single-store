@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:single_store/routes/route_manager.dart';
 import 'package:single_store/theme/my_colors.dart';
 import 'package:single_store/theme/sizes.dart';

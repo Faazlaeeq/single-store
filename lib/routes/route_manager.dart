@@ -9,6 +9,7 @@ import 'package:single_store/screens/Home/filter_screen.dart';
 import 'package:single_store/screens/Home/home_screen.dart';
 import 'package:single_store/screens/Home/product_display_screen.dart';
 import 'package:single_store/screens/Home/products_by_cat_screen.dart';
+import 'package:single_store/screens/Home/wishlist_screen.dart';
 import 'package:single_store/screens/onboard_screen.dart';
 import 'package:single_store/screens/open_screen.dart';
 
@@ -23,6 +24,7 @@ class RoutesManager {
   static const String productsByCat = "/home/category/productsByCat";
   static const String productDisplay = "/home/productDisplay";
   static const String cart = "/cart";
+  static const String wishlist = "/wishlist";
   static const String filter = "/filter";
 
   Route generateRoute(RouteSettings settings) {
@@ -78,6 +80,12 @@ class RoutesManager {
         return MaterialPageRoute(
           settings: settings,
           builder: (context) => FilterScreen(),
+        );
+
+      case (wishlist):
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (context) => WishlistScreen(),
         );
       default:
         return MaterialPageRoute(builder: (context) => HomeScreen());
