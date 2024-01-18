@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:single_store/routes/route_manager.dart';
 import 'package:single_store/theme/my_colors.dart';
 import 'package:single_store/theme/sizes.dart';
 import 'package:single_store/widgets/counter_widget.dart';
@@ -52,7 +51,7 @@ class _CartScreenState extends State<CartScreen> {
                 Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
+                      image: const DecorationImage(
                           image: AssetImage("assets/images/shirt-1.png"),
                           fit: BoxFit.cover)),
                   height: 80,
@@ -86,11 +85,11 @@ class _CartScreenState extends State<CartScreen> {
                               "\$ 150",
                               style: Theme.of(context).textTheme.bodyMedium,
                             ),
-                            Spacer(),
+                            const Spacer(),
                             Container(
                               width: 80,
                               alignment: Alignment.centerRight,
-                              child: CounterWidget(),
+                              child: const CounterWidget(),
                             ),
                           ],
                         ),
@@ -101,7 +100,7 @@ class _CartScreenState extends State<CartScreen> {
               ],
             ),
           ),
-          Divider(
+          const Divider(
             color: MyColors.dividerColor,
           ),
           SizedBox(
@@ -110,7 +109,7 @@ class _CartScreenState extends State<CartScreen> {
                 Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
+                      image: const DecorationImage(
                           image: AssetImage("assets/images/shirt-1.png"),
                           fit: BoxFit.cover)),
                   height: 80,
@@ -144,11 +143,11 @@ class _CartScreenState extends State<CartScreen> {
                               "\$ 150",
                               style: Theme.of(context).textTheme.bodyMedium,
                             ),
-                            Spacer(),
+                            const Spacer(),
                             Container(
                               width: 80,
                               alignment: Alignment.centerRight,
-                              child: CounterWidget(),
+                              child: const CounterWidget(),
                             ),
                           ],
                         ),
@@ -159,7 +158,7 @@ class _CartScreenState extends State<CartScreen> {
               ],
             ),
           ),
-          Divider(
+          const Divider(
             color: MyColors.dividerColor,
           ),
           SizedBox(
@@ -168,7 +167,7 @@ class _CartScreenState extends State<CartScreen> {
                 Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
+                      image: const DecorationImage(
                           image: AssetImage("assets/images/shirt-1.png"),
                           fit: BoxFit.cover)),
                   height: 80,
@@ -202,11 +201,11 @@ class _CartScreenState extends State<CartScreen> {
                               "\$ 150",
                               style: Theme.of(context).textTheme.bodyMedium,
                             ),
-                            Spacer(),
+                            const Spacer(),
                             Container(
                               width: 80,
                               alignment: Alignment.centerRight,
-                              child: CounterWidget(),
+                              child: const CounterWidget(),
                             ),
                           ],
                         ),
@@ -217,7 +216,7 @@ class _CartScreenState extends State<CartScreen> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Container(
@@ -234,14 +233,14 @@ class _CartScreenState extends State<CartScreen> {
                         "Subtotal",
                         style: Theme.of(context).textTheme.titleSmall,
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Text(
                         "\$ 450",
                         style: Theme.of(context).textTheme.titleMedium,
                       ),
                     ],
                   ),
-                  Divider(
+                  const Divider(
                     color: MyColors.dividerColor,
                   ),
                   Row(
@@ -250,14 +249,14 @@ class _CartScreenState extends State<CartScreen> {
                         "Shipping",
                         style: Theme.of(context).textTheme.titleSmall,
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Text(
                         "\$ 17",
                         style: Theme.of(context).textTheme.titleMedium,
                       ),
                     ],
                   ),
-                  Divider(
+                  const Divider(
                     color: MyColors.dividerColor,
                   ),
                   Row(
@@ -266,7 +265,7 @@ class _CartScreenState extends State<CartScreen> {
                         "Total",
                         style: Theme.of(context).textTheme.titleSmall,
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Text(
                         "\$ 450",
                         style: Theme.of(context).textTheme.titleMedium,
@@ -277,7 +276,7 @@ class _CartScreenState extends State<CartScreen> {
               ),
             ),
           ),
-          Expanded(child: SizedBox()),
+          const Expanded(child: SizedBox()),
           Padding(
             padding: const EdgeInsets.only(bottom: padding3),
             child: ElevatedButton(
