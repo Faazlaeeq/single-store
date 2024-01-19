@@ -47,7 +47,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       key: scaffoldKey,
       appBar: MyAppbar(scaffoldKey: scaffoldKey),
-      drawer: const MyDrawer(),
+      drawer: MyDrawer(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: padding5),
         child: SingleChildScrollView(

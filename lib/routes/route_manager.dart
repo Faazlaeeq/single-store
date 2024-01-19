@@ -12,6 +12,7 @@ import 'package:single_store/screens/Home/products_by_cat_screen.dart';
 import 'package:single_store/screens/Home/review_screen.dart';
 import 'package:single_store/screens/Home/wishlist_screen.dart';
 import 'package:single_store/screens/Order/order_detail_screen.dart';
+import 'package:single_store/screens/Order/order_tracking.dart';
 import 'package:single_store/screens/onboard_screen.dart';
 import 'package:single_store/screens/open_screen.dart';
 
@@ -30,6 +31,7 @@ class RoutesManager {
   static const String filter = "/filter";
   static const String review = "/review";
   static const String orderDetail = "/orderDetail";
+  static const String orderTracking = "/orderTracking";
 
   Route generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -101,6 +103,10 @@ class RoutesManager {
           settings: settings,
           builder: (context) => OrderDetailScreen(),
         );
+
+      case (orderTracking):
+        return MaterialPageRoute(
+            settings: settings, builder: (context) => OrderTrackingScreen());
       default:
         return MaterialPageRoute(builder: (context) => HomeScreen());
     }

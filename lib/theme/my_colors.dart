@@ -35,4 +35,6 @@ class MyColors {
     blurRadius: 10,
     offset: Offset(0, 5),
   );
+
+  static const Color inactiveDividerColor = Color.fromRGBO(231, 231, 231, 1);
 }
