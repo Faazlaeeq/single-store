@@ -26,4 +26,13 @@ class MyColors {
   static const Color ratingStarColor = Color.fromRGBO(255, 171, 7, 1);
 
   static const Color shadowColor = Color.fromRGBO(0, 0, 0, 0.1);
+
+  static const Color subtitleColor2 = Color.fromRGBO(136, 136, 136, 1);
+
+  static const BoxShadow spreadedShadow = BoxShadow(
+    color: MyColors.shadowColor,
+    spreadRadius: 7,
+    blurRadius: 10,
+    offset: Offset(0, 5),
+  );
 }

@@ -12,6 +12,7 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
     this.padding = padding1,
     this.onpressed,
     this.positionedWidget,
+    this.showTrailingIcon = false,
   });
 
   final GlobalKey<ScaffoldState> scaffoldKey;
@@ -20,7 +21,7 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
   final Color actionBgColor;
   final double padding;
   final Widget? positionedWidget;
-
+  final bool showTrailingIcon;
   final VoidCallback? onpressed;
 
   @override
@@ -43,26 +44,29 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
                     {scaffoldKey.currentState!.openDrawer()}
                 },
       ),
-      actions: [
-        Stack(
-          children: [
-            positionedWidget ?? const SizedBox(),
-            IconButton(
-              onPressed: () {},
-              icon: CircleAvatar(
-                  backgroundColor: actionBgColor,
-                  child: Padding(
-                    padding: EdgeInsets.all(padding),
-                    child: Image.asset(actionIcon,
-                        alignment: Alignment.bottomCenter, fit: BoxFit.cover),
-                  )),
-            ),
-          ],
-        ),
-        const SizedBox(
-          width: padding5,
-        )
-      ],
+      actions: showTrailingIcon
+          ? [
+              Stack(
+                children: [
+                  positionedWidget ?? const SizedBox(),
+                  IconButton(
+                    onPressed: () {},
+                    icon: CircleAvatar(
+                        backgroundColor: actionBgColor,
+                        child: Padding(
+                          padding: EdgeInsets.all(padding),
+                          child: Image.asset(actionIcon,
+                              alignment: Alignment.bottomCenter,
+                              fit: BoxFit.cover),
+                        )),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                width: padding5,
+              )
+            ]
+          : [],
     );
   }
 

@@ -9,7 +9,9 @@ import 'package:single_store/screens/Home/filter_screen.dart';
 import 'package:single_store/screens/Home/home_screen.dart';
 import 'package:single_store/screens/Home/product_display_screen.dart';
 import 'package:single_store/screens/Home/products_by_cat_screen.dart';
+import 'package:single_store/screens/Home/review_screen.dart';
 import 'package:single_store/screens/Home/wishlist_screen.dart';
+import 'package:single_store/screens/Order/order_detail_screen.dart';
 import 'package:single_store/screens/onboard_screen.dart';
 import 'package:single_store/screens/open_screen.dart';
 
@@ -26,12 +28,13 @@ class RoutesManager {
   static const String cart = "/cart";
   static const String wishlist = "/wishlist";
   static const String filter = "/filter";
+  static const String review = "/review";
+  static const String orderDetail = "/orderDetail";
 
   Route generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case (home):
         return MaterialPageRoute(
-          //TODO: change this to home screen
           builder: (context) => HomeScreen(),
         );
       case (open):
@@ -86,6 +89,17 @@ class RoutesManager {
         return MaterialPageRoute(
           settings: settings,
           builder: (context) => WishlistScreen(),
+        );
+      case (review):
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (context) => ReviewScreen(),
+        );
+
+      case (orderDetail):
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (context) => OrderDetailScreen(),
         );
       default:
         return MaterialPageRoute(builder: (context) => HomeScreen());

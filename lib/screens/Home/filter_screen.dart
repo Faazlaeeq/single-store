@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:single_store/routes/route_manager.dart';
 import 'package:single_store/theme/my_colors.dart';
 import 'package:single_store/theme/sizes.dart';
+import 'package:single_store/widgets/common_widgets.dart';
 import 'package:single_store/widgets/my_appbar_widget.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 import 'package:syncfusion_flutter_core/theme.dart';
@@ -163,16 +164,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      "Filter",
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyLarge!
-                          .copyWith(fontSize: 18),
-                    ),
-                  ),
+                  CommonWidgets.headingText(context, "Filter"),
                   filterChips,
                   const SizedBox(
                     height: padding3,

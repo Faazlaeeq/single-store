@@ -1,4 +1,5 @@
 import 'package:single_store/models/product_card.dart';
+import 'package:single_store/models/review_model.dart';
 
 class Data {
   final itemsProduct = [
@@ -37,6 +38,44 @@ class Data {
       description: "Immerse yourself .",
       image: "assets/images/shirt-6.png",
       price: 159.99,
+    ),
+  ];
+
+  final reviewsList = <ReviewModel>[
+    ReviewModel(
+      name: "Malison Aved",
+      review:
+          "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using.",
+      imageUrl: "assets/images/review-1.png",
+      date: "20 june, 2021",
+    ),
+    ReviewModel(
+      name: "John Doe",
+      review:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      imageUrl: "assets/images/review-2.png",
+      date: "25 june, 2021",
+    ),
+    ReviewModel(
+      name: "Jane Smith",
+      review:
+          "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      imageUrl: "assets/images/review-3.png",
+      date: "30 june, 2021",
+    ),
+    ReviewModel(
+      name: "Alex Johnson",
+      review:
+          "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+      imageUrl: "assets/images/review-4.png",
+      date: "5 july, 2021",
+    ),
+    ReviewModel(
+      name: "Emily Brown",
+      review:
+          "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.",
+      imageUrl: "assets/images/review-5.png",
+      date: "10 july, 2021",
     ),
   ];
 }

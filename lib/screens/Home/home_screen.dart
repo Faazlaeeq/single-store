@@ -5,6 +5,7 @@ import 'package:single_store/theme/sizes.dart';
 import 'package:single_store/widgets/Home/new_arrival_card.dart';
 import 'package:single_store/widgets/my_appbar_widget.dart';
 import 'package:single_store/widgets/my_bottom_navigationbar.dart';
+import 'package:single_store/widgets/my_drawer_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -46,7 +47,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       key: scaffoldKey,
       appBar: MyAppbar(scaffoldKey: scaffoldKey),
-      drawer: const Drawer(),
+      drawer: const MyDrawer(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: padding5),
         child: SingleChildScrollView(
@@ -294,30 +295,18 @@ class HomeScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Column(
-                    children: [
-                      productCard(
-                          context,
-                          newArrival[0]["imgPath"]!,
-                          newArrival[0]["brand"]!,
-                          newArrival[0]["name"]!,
-                          newArrival[0]["price"]!),
-                      productCard(
-                          context,
-                          newArrival[1]["imgPath"]!,
-                          newArrival[1]["brand"]!,
-                          newArrival[1]["name"]!,
-                          newArrival[1]["price"]!),
-                      Text(
-                        "Axel Arigato",
-                        style: Theme.of(context).textTheme.titleSmall,
-                      ),
-                      Text("Clean 90 Triple Sneakers",
-                          style: Theme.of(context).textTheme.labelSmall),
-                      Text("\$245.00",
-                          style: Theme.of(context).textTheme.titleSmall!),
-                    ],
-                  ),
+                  productCard(
+                      context,
+                      newArrival[0]["imgPath"]!,
+                      newArrival[0]["brand"]!,
+                      newArrival[0]["name"]!,
+                      newArrival[0]["price"]!),
+                  productCard(
+                      context,
+                      newArrival[1]["imgPath"]!,
+                      newArrival[1]["brand"]!,
+                      newArrival[1]["name"]!,
+                      newArrival[1]["price"]!),
                 ],
               ),
             )
