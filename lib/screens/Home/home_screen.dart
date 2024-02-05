@@ -62,8 +62,6 @@ class HomeScreen extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     color: MyColors.subtitleColor,
                     fontWeight: FontWeight.bold)),
-
-            // Search Bar
             SizedBox(
               width: double.maxFinite,
               child: Row(

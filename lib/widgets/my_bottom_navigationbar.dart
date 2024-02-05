@@ -32,7 +32,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
         onTap: (i) {
           setState(() => _currentIndex = i);
           if (i == 1) {
-            Navigator.pushNamed(context, RoutesManager.wishlist);
+            // Navigator.pushNamed(context, RoutesManager.wishlist);
           }
         },
         items: [
@@ -48,11 +48,15 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                   height: double.infinity,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      color: MyColors.primaryColor),
+                      color: _currentIndex == 0
+                          ? MyColors.primaryColor
+                          : Colors.transparent),
                   child: Padding(
                     padding: const EdgeInsets.all(padding2),
                     child: Image.asset(
-                      "assets/icons/home.png",
+                      _currentIndex == 0
+                          ? "assets/icons/home.png"
+                          : "assets/icons/home-black.png",
                       alignment: Alignment.center,
                       height: 16,
                       width: 18,
@@ -84,14 +88,15 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                   height: double.infinity,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      // color: _currentIndex == 1
-                      //     ? MyColors.primaryColor
-                      //     : Colors.transparent
-                      color: Colors.transparent),
+                      color: _currentIndex == 1
+                          ? MyColors.primaryColor
+                          : Colors.transparent),
                   child: Padding(
                     padding: const EdgeInsets.all(padding2),
                     child: Image.asset(
-                      "assets/icons/cart.png",
+                      _currentIndex == 1
+                          ? "assets/icons/cart-white.png"
+                          : "assets/icons/cart.png",
                       alignment: Alignment.center,
                       height: 16,
                       width: 18,
@@ -123,14 +128,15 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                   height: double.infinity,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      // color: _currentIndex == 1
-                      //     ? MyColors.primaryColor
-                      //     : Colors.transparent
-                      color: Colors.transparent),
+                      color: _currentIndex == 2
+                          ? MyColors.primaryColor
+                          : Colors.transparent),
                   child: Padding(
                     padding: const EdgeInsets.all(padding2),
                     child: Image.asset(
-                      "assets/icons/notifications.png",
+                      _currentIndex == 2
+                          ? "assets/icons/notifications-light2.png"
+                          : "assets/icons/notifications.png",
                       alignment: Alignment.center,
                       height: 16,
                       width: 18,
@@ -162,14 +168,15 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
                   height: double.infinity,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      // color: _currentIndex == 1
-                      //     ? MyColors.primaryColor
-                      //     : Colors.transparent
-                      color: Colors.transparent),
+                      color: _currentIndex == 3
+                          ? MyColors.primaryColor
+                          : Colors.transparent),
                   child: Padding(
                     padding: const EdgeInsets.all(padding2),
                     child: Image.asset(
-                      "assets/icons/profile.png",
+                      _currentIndex == 3
+                          ? "assets/icons/profile-white.png"
+                          : "assets/icons/profile.png",
                       alignment: Alignment.center,
                       height: 16,
                       width: 18,

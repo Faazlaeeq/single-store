@@ -59,17 +59,22 @@ class CommonWidgets {
     TextStyle? subtitleStyle,
     double? heightImg,
     double? widthImg,
+    bool isDecoratedCard = true,
+    double imageBorderRadius = 10,
+    TextStyle? nameTheme,
   }) {
     return Container(
         margin: const EdgeInsets.symmetric(
             horizontal: padding2, vertical: padding2),
         padding: const EdgeInsets.symmetric(
             horizontal: padding1, vertical: padding1),
-        decoration: BoxDecoration(
-          color: MyColors.secondaryColor,
-          borderRadius: BorderRadius.circular(13),
-          boxShadow: const [MyColors.spreadedShadow],
-        ),
+        decoration: isDecoratedCard
+            ? BoxDecoration(
+                color: MyColors.secondaryColor,
+                borderRadius: BorderRadius.circular(13),
+                boxShadow: const [MyColors.spreadedShadow],
+              )
+            : const BoxDecoration(),
         child: Row(
           mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
           crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.start,
@@ -79,7 +84,7 @@ class CommonWidgets {
                 : Container(
                     alignment: Alignment.topCenter,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(imageBorderRadius),
                         image: DecorationImage(
                             image: AssetImage(imageUrl), fit: BoxFit.cover)),
                     height: heightImg ?? 60,
@@ -97,7 +102,8 @@ class CommonWidgets {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(name ?? "",
-                                style: Theme.of(context).textTheme.titleSmall!),
+                                style: nameTheme ??
+                                    Theme.of(context).textTheme.titleSmall!),
                             SizedBox(child: titleEnd)
                           ],
                         ),

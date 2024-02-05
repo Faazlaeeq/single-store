@@ -9,7 +9,9 @@ class MyDrawer extends StatelessWidget implements PreferredSizeWidget {
     ["Review", RoutesManager.review],
     ["Filters", RoutesManager.filter],
     ["Order Detail", RoutesManager.orderDetail],
-    ["Order Tracking", RoutesManager.orderTracking]
+    ["Order Tracking", RoutesManager.orderTracking],
+    ["Discounts", RoutesManager.discounts],
+    ["WishList", RoutesManager.wishlist],
   ];
   @override
   Widget build(BuildContext context) {
