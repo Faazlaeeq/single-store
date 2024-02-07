@@ -62,7 +62,7 @@ class DiscountsScreen extends StatelessWidget {
                   return Container(
                     height: 160,
                     padding: const EdgeInsets.symmetric(
-                        horizontal: padding3, vertical: padding1),
+                        horizontal: padding3, vertical: padding2),
                     margin: const EdgeInsets.symmetric(
                         horizontal: padding3, vertical: padding2),
                     decoration: BoxDecoration(

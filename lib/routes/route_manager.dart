@@ -12,8 +12,12 @@ import 'package:single_store/screens/Home/product_display_screen.dart';
 import 'package:single_store/screens/Home/products_by_cat_screen.dart';
 import 'package:single_store/screens/Home/review_screen.dart';
 import 'package:single_store/screens/Home/wishlist_screen.dart';
+import 'package:single_store/screens/Order/my_order_screen.dart';
 import 'package:single_store/screens/Order/order_detail_screen.dart';
 import 'package:single_store/screens/Order/order_tracking.dart';
+import 'package:single_store/screens/Order/payment_screen.dart';
+import 'package:single_store/screens/Profile/profile_screen.dart';
+import 'package:single_store/screens/Profile/profile_settings_screen.dart';
 import 'package:single_store/screens/onboard_screen.dart';
 import 'package:single_store/screens/open_screen.dart';
 
@@ -34,6 +38,10 @@ class RoutesManager {
   static const String orderDetail = "/orderDetail";
   static const String orderTracking = "/orderTracking";
   static const String discounts = "/discounts";
+  static const String profile = "/profile";
+  static const String profileSettings = "/profileSettings";
+  static const String myOrders = "/myOrders";
+  static const String payment = "/payment";
 
   Route generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -47,11 +55,11 @@ class RoutesManager {
         );
       case (onboard):
         return MaterialPageRoute(
-          builder: (context) => OnBoardScreen(),
+          builder: (context) => const OnBoardScreen(),
         );
       case (login):
         return MaterialPageRoute(
-          builder: (context) => LoginScreen(),
+          builder: (context) => const LoginScreen(),
         );
       case (signup):
         return MaterialPageRoute(
@@ -80,19 +88,19 @@ class RoutesManager {
       case (cart):
         return MaterialPageRoute(
           settings: settings,
-          builder: (context) => CartScreen(),
+          builder: (context) => const CartScreen(),
         );
 
       case (filter):
         return MaterialPageRoute(
           settings: settings,
-          builder: (context) => FilterScreen(),
+          builder: (context) => const FilterScreen(),
         );
 
       case (wishlist):
         return MaterialPageRoute(
           settings: settings,
-          builder: (context) => WishlistScreen(),
+          builder: (context) => const WishlistScreen(),
         );
       case (review):
         return MaterialPageRoute(
@@ -108,10 +116,23 @@ class RoutesManager {
 
       case (orderTracking):
         return MaterialPageRoute(
-            settings: settings, builder: (context) => OrderTrackingScreen());
+            settings: settings,
+            builder: (context) => const OrderTrackingScreen());
       case (discounts):
         return MaterialPageRoute(
             settings: settings, builder: (context) => DiscountsScreen());
+      case (profile):
+        return MaterialPageRoute(
+            settings: settings, builder: (context) => ProfileScreen());
+      case (profileSettings):
+        return MaterialPageRoute(
+            settings: settings, builder: (context) => ProfileSettingsScreen());
+      case (myOrders):
+        return MaterialPageRoute(
+            settings: settings, builder: (context) => const MyOrderScreen());
+      case (payment):
+        return MaterialPageRoute(
+            settings: settings, builder: (context) => const PaymentScreen());
       default:
         return MaterialPageRoute(builder: (context) => HomeScreen());
     }

@@ -14,13 +14,20 @@ class CommonWidgets {
     );
   }
 
-  static Widget roundedButton(
-      {required BuildContext context,
-      required String text,
-      required double widthInPercent,
-      VoidCallback? onPressed,
-      String? routeName}) {
+  static Widget roundedButton({
+    required BuildContext context,
+    required String text,
+    required double widthInPercent,
+    VoidCallback? onPressed,
+    String? routeName,
+    double borderRadius = 25,
+    Widget? preffixIcon,
+  }) {
     return ElevatedButton(
+      style: ButtonStyle(
+          shape: MaterialStateProperty.all(RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(borderRadius),
+      ))),
       onPressed: onPressed ??
           () {
             Navigator.of(context).pushNamed(routeName!);
@@ -31,6 +38,7 @@ class CommonWidgets {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            preffixIcon ?? const SizedBox(),
             const SizedBox(
               width: 10,
             ),
@@ -62,12 +70,14 @@ class CommonWidgets {
     bool isDecoratedCard = true,
     double imageBorderRadius = 10,
     TextStyle? nameTheme,
+    double verticalPadding = padding1,
+    double horizontalPadding = padding1,
   }) {
     return Container(
         margin: const EdgeInsets.symmetric(
             horizontal: padding2, vertical: padding2),
-        padding: const EdgeInsets.symmetric(
-            horizontal: padding1, vertical: padding1),
+        padding: EdgeInsets.symmetric(
+            horizontal: horizontalPadding, vertical: verticalPadding),
         decoration: isDecoratedCard
             ? BoxDecoration(
                 color: MyColors.secondaryColor,

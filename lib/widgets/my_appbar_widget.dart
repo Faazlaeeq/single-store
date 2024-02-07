@@ -28,6 +28,9 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       toolbarHeight: 80,
+      surfaceTintColor: MyColors.forgroundWhiteColor,
+      shadowColor: MyColors.shadowColor,
+      scrolledUnderElevation: 10,
       leadingWidth: 90,
       leading: IconButton(
         icon: ImageIcon(
