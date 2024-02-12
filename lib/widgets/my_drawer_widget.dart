@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:single_store/routes/route_manager.dart';
 import 'package:single_store/theme/my_colors.dart';
+import 'package:single_store/theme/sizes.dart';
 
 class MyDrawer extends StatelessWidget implements PreferredSizeWidget {
   MyDrawer({super.key});
@@ -13,11 +14,9 @@ class MyDrawer extends StatelessWidget implements PreferredSizeWidget {
     ["Discounts", RoutesManager.discounts],
     ["WishList", RoutesManager.wishlist],
     ["Cart", RoutesManager.cart],
-    ["Profile", RoutesManager.profile],
     ["Category", RoutesManager.category],
     ["Home", RoutesManager.home],
     ["Profile Settings", RoutesManager.profileSettings],
-    ["My Orders", RoutesManager.myOrders],
     ["Payment", RoutesManager.payment]
   ];
   @override
@@ -34,13 +33,17 @@ class MyDrawer extends StatelessWidget implements PreferredSizeWidget {
           Column(
             children: List.generate(routesList.length, (index) {
               return Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: padding5, vertical: padding1),
                 child: ListTile(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)),
                   tileColor: MyColors.secondaryColor,
                   style: ListTileStyle.drawer,
-                  title: Text(routesList[index][0]),
+                  title: Text(
+                    routesList[index][0],
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
                   onTap: () {
                     Navigator.of(context).pushNamed(routesList[index][1]);
                   },

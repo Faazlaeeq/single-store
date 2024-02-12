@@ -72,6 +72,9 @@ class CommonWidgets {
     TextStyle? nameTheme,
     double verticalPadding = padding1,
     double horizontalPadding = padding1,
+    BoxFit? fit,
+    Alignment imageAlignment = Alignment.center,
+    Widget? discriptionWidget,
   }) {
     return Container(
         margin: const EdgeInsets.symmetric(
@@ -96,7 +99,9 @@ class CommonWidgets {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(imageBorderRadius),
                         image: DecorationImage(
-                            image: AssetImage(imageUrl), fit: BoxFit.cover)),
+                            alignment: imageAlignment,
+                            image: AssetImage(imageUrl),
+                            fit: fit ?? BoxFit.cover)),
                     height: heightImg ?? 60,
                     width: widthImg ?? 60,
                   ),
@@ -118,16 +123,21 @@ class CommonWidgets {
                           ],
                         ),
                       ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          subtitle ?? "",
-                          style: subtitleStyle ??
-                              Theme.of(context).textTheme.labelSmall!.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                  color: MyColors.subtitleColor2),
-                        ),
-                      ),
+                      subtitle == null
+                          ? const SizedBox()
+                          : Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                subtitle,
+                                style: subtitleStyle ??
+                                    Theme.of(context)
+                                        .textTheme
+                                        .labelSmall!
+                                        .copyWith(
+                                            fontWeight: FontWeight.bold,
+                                            color: MyColors.subtitleColor2),
+                              ),
+                            ),
                       description == null
                           ? const SizedBox()
                           : Align(
@@ -140,6 +150,7 @@ class CommonWidgets {
                                     .copyWith(color: MyColors.primaryColor),
                               ),
                             ),
+                      discriptionWidget ?? const SizedBox()
                     ]),
               ),
             ),

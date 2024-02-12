@@ -131,6 +131,7 @@ class _ProductDisplayScreenState extends State<ProductDisplayScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Product Display"),
+        centerTitle: true,
       ),
       body: Container(
         decoration: const BoxDecoration(

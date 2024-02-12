@@ -5,14 +5,18 @@ import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'package:single_store/theme/sizes.dart';
 
 class MyBottomNavigationBar extends StatefulWidget {
-  const MyBottomNavigationBar({super.key});
-
+  const MyBottomNavigationBar(
+      {super.key, this.currentIndex = 0, this.onPressed});
+  final int currentIndex;
+  final Function(int i)? onPressed;
   @override
-  State<MyBottomNavigationBar> createState() => _MyBottomNavigationBarState();
+  State<MyBottomNavigationBar> createState() =>
+      _MyBottomNavigationBarState(currentIndex);
 }
 
 class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
   var _currentIndex = 0;
+  _MyBottomNavigationBarState(this._currentIndex);
 
   @override
   Widget build(BuildContext context) {
@@ -30,10 +34,11 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
             const EdgeInsets.symmetric(horizontal: 0, vertical: padding1),
         currentIndex: _currentIndex,
         onTap: (i) {
-          setState(() => _currentIndex = i);
-          if (i == 1) {
-            // Navigator.pushNamed(context, RoutesManager.wishlist);
-          }
+          setState(() {
+            _currentIndex = i;
+          });
+
+          if (widget.onPressed != null) widget.onPressed!(i);
         },
         items: [
           SalomonBottomBarItem(

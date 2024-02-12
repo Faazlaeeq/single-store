@@ -13,6 +13,7 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
     this.onpressed,
     this.positionedWidget,
     this.showTrailingIcon = false,
+    this.onActionPressed,
   });
 
   final GlobalKey<ScaffoldState> scaffoldKey;
@@ -23,6 +24,7 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? positionedWidget;
   final bool showTrailingIcon;
   final VoidCallback? onpressed;
+  final VoidCallback? onActionPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +55,7 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
                 children: [
                   positionedWidget ?? const SizedBox(),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: onActionPressed,
                     icon: CircleAvatar(
                         backgroundColor: actionBgColor,
                         child: Padding(

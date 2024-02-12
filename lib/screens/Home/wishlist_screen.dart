@@ -188,6 +188,10 @@ class WishlistList extends StatelessWidget {
                             SizedBox(
                               height: 30,
                               child: InkWell(
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, RoutesManager.cart);
+                                },
                                 child: Container(
                                   alignment: Alignment.center,
                                   padding: const EdgeInsets.symmetric(
